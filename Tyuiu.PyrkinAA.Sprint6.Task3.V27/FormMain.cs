@@ -1,5 +1,7 @@
 using System;
 using System.Windows.Forms;
+// Убедитесь, что здесь правильный путь к библиотеке
+// Если библиотека в том же решении, может потребоваться ссылка на проект
 using Tyuiu.PyrkinAA.Sprint6.Task3.V27.Lib;
 
 namespace Tyuiu.PyrkinAA.Sprint6.Task3.V27
