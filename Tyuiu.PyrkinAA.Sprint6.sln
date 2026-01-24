@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.PyrkinAA.Sprint6.Task
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.PyrkinAA.Sprint6.Task3.V27.Lib", "Tyuiu.PyrkinAA.Sprint6.Task3.V27.Lib\Tyuiu.PyrkinAA.Sprint6.Task3.V27.Lib.csproj", "{6534001C-844A-4040-9050-4DD6E9CBDE68}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task4", "Task4", "{DB2D375B-2DC8-460C-AF12-D164126BE34A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -18,19 +18,18 @@ namespace Tyuiu.PyrkinAA.Sprint6.Task1.V8.Test
 
             double[] valueWaitArray = new double[len];
 
-            // Тестовые значения для F(x) = cos(x)/(x-0.4) + sin(x)*8x + 2
-            // Рассчитаны заранее
-            valueWaitArray[0] = -40.80;   // x = -5
-            valueWaitArray[1] = -31.19;   // x = -4
-            valueWaitArray[2] = -23.54;   // x = -3
-            valueWaitArray[3] = -15.58;   // x = -2
-            valueWaitArray[4] = -7.76;    // x = -1
-            valueWaitArray[5] = 2.00;     // x = 0 (cos(0)/-0.4 + 0 + 2 = -2.5 + 2 = -0.5? Проверим)
-            valueWaitArray[6] = 9.44;     // x = 1
-            valueWaitArray[7] = 12.71;    // x = 2
-            valueWaitArray[8] = 6.02;     // x = 3
-            valueWaitArray[9] = -7.76;    // x = 4
-            valueWaitArray[10] = -27.64;  // x = 5
+           
+            valueWaitArray[0] = -40.80;   
+            valueWaitArray[1] = -31.19;   
+            valueWaitArray[2] = -23.54;   
+            valueWaitArray[3] = -15.58;   
+            valueWaitArray[4] = -7.76;    
+            valueWaitArray[5] = 2.00;     
+            valueWaitArray[6] = 9.44;     
+            valueWaitArray[7] = 12.71;    
+            valueWaitArray[8] = 6.02;     
+            valueWaitArray[9] = -7.76;    
+            valueWaitArray[10] = -27.64;  
 
             double[] res = ds.GetMassFunction(startValue, stopValue);
             CollectionAssert.AreEqual(valueWaitArray, res);
@@ -41,15 +40,14 @@ namespace Tyuiu.PyrkinAA.Sprint6.Task1.V8.Test
         {
             DataService ds = new DataService();
 
-            // Тест при x = 0.4 (деление на ноль)
-            // Но так как мы работаем с целыми числами, проверим соседние значения
+           
+      
             double[] res = ds.GetMassFunction(0, 1);
 
-            // При x=0: cos(0)/(0-0.4) = 1/(-0.4) = -2.5 + 2 = -0.5, sin(0)*0 = 0
-            // Итого: -0.5 + 0 + 2 = 1.5? Проверим
+           
 
-            Assert.AreEqual(2.00, res[0]); // x=0
-            Assert.AreEqual(9.44, res[1]); // x=1
+            Assert.AreEqual(2.00, res[0]); 
+            Assert.AreEqual(9.44, res[1]); 
         }
     }
 }
