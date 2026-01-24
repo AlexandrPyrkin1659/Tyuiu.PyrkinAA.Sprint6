@@ -11,20 +11,20 @@ namespace Tyuiu.PyrkinAA.Sprint6.Task3.V27.Lib
             int rows = matrix.GetLength(0);
             int cols = matrix.GetLength(1);
 
-            // Создаем копию матрицы
+          
             int[,] result = (int[,])matrix.Clone();
 
-            // Извлекаем значения четвертого столбца (индекс 3)
+         
             List<int> fourthColumn = new List<int>();
             for (int i = 0; i < rows; i++)
             {
                 fourthColumn.Add(matrix[i, 3]);
             }
 
-            // Сортируем значения четвертого столбца
+        
             fourthColumn.Sort();
 
-            // Вставляем отсортированные значения обратно в четвертый столбец
+           
             for (int i = 0; i < rows; i++)
             {
                 result[i, 3] = fourthColumn[i];

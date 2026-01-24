@@ -1,7 +1,6 @@
 using System;
 using System.Windows.Forms;
-// ”бедитесь, что здесь правильный путь к библиотеке
-// ≈сли библиотека в том же решении, может потребоватьс€ ссылка на проект
+
 using Tyuiu.PyrkinAA.Sprint6.Task3.V27.Lib;
 
 namespace Tyuiu.PyrkinAA.Sprint6.Task3.V27
@@ -52,7 +51,7 @@ namespace Tyuiu.PyrkinAA.Sprint6.Task3.V27
             int rows = res.GetLength(0);
             int columns = res.GetLength(1);
 
-            // ќчищаем DataGridView перед заполнением
+         
             dataGridViewMas_PAA.Rows.Clear();
             dataGridViewMas_PAA.Columns.Clear();
 
