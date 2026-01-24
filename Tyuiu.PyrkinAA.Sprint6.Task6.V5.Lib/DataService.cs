@@ -11,7 +11,7 @@ namespace Tyuiu.PyrkinAA.Sprint6.Task6.V5.Lib
     {
         public string CollectTextFromFile(string path)
         {
-            StringBuilder result = new StringBuilder();
+            List<string> resultWords = new List<string>();
 
             using (StreamReader reader = new StreamReader(path, Encoding.Default))
             {
@@ -19,23 +19,24 @@ namespace Tyuiu.PyrkinAA.Sprint6.Task6.V5.Lib
                 while ((line = reader.ReadLine()) != null)
                 {
                    
-                    string[] words = line.Split(new char[] { ' ', ',', '.', '!', '?', ';', ':', '\t', '\r', '\n',
-                                                            '(', ')', '[', ']', '{', '}', '"', '\'', '-', '—', '–' },
-                                                StringSplitOptions.RemoveEmptyEntries);
+                    char[] separators = new char[] { ' ', ',', '.', '!', '?', ';', ':', '\t', '\r', '\n',
+                                                    '(', ')', '[', ']', '{', '}', '"', '\'' };
+
+                    string[] words = line.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
                     foreach (string word in words)
                     {
-                       
-                        if (word.Contains('l') || word.Contains('L'))
+                        
+                        if (word.Contains('l'))
                         {
-                            result.Append(word).Append(" ");
+                            resultWords.Add(word);
                         }
                     }
                 }
             }
 
-            
-            return result.ToString().Trim();
+           
+            return string.Join(" ", resultWords);
         }
     }
 }
