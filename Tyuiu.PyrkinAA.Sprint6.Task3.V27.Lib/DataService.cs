@@ -11,31 +11,23 @@ namespace Tyuiu.PyrkinAA.Sprint6.Task3.V27.Lib
             int rows = matrix.GetLength(0);
             int cols = matrix.GetLength(1);
 
-            // Преобразуем матрицу в список строк для сортировки
-            var rowsList = new List<int[]>();
+            // Создаем копию матрицы
+            int[,] result = (int[,])matrix.Clone();
 
+            // Извлекаем значения четвертого столбца (индекс 3)
+            List<int> fourthColumn = new List<int>();
             for (int i = 0; i < rows; i++)
             {
-                var row = new int[cols];
-                for (int j = 0; j < cols; j++)
-                {
-                    row[j] = matrix[i, j];
-                }
-                rowsList.Add(row);
+                fourthColumn.Add(matrix[i, 3]);
             }
 
-            // Сортируем по 4-му столбцу (индекс 3)
-            rowsList.Sort((row1, row2) => row1[3].CompareTo(row2[3]));
+            // Сортируем значения четвертого столбца
+            fourthColumn.Sort();
 
-            // Создаем новую матрицу с отсортированными строками
-            int[,] result = new int[rows, cols];
-
+            // Вставляем отсортированные значения обратно в четвертый столбец
             for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < cols; j++)
-                {
-                    result[i, j] = rowsList[i][j];
-                }
+                result[i, 3] = fourthColumn[i];
             }
 
             return result;
