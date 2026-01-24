@@ -11,26 +11,31 @@ namespace Tyuiu.PyrkinAA.Sprint6.Task6.V5.Lib
     {
         public string CollectTextFromFile(string path)
         {
-            string str = "";
+            StringBuilder result = new StringBuilder();
+
             using (StreamReader reader = new StreamReader(path, Encoding.Default))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    string[] words = line.Split(new char[] { ' ', ',', '.', '!', '?', ';', ':', '\t' },
-                        StringSplitOptions.RemoveEmptyEntries);
+                   
+                    string[] words = line.Split(new char[] { ' ', ',', '.', '!', '?', ';', ':', '\t', '\r', '\n',
+                                                            '(', ')', '[', ']', '{', '}', '"', '\'', '-', '—', '–' },
+                                                StringSplitOptions.RemoveEmptyEntries);
 
                     foreach (string word in words)
                     {
-                        if (word.Contains('l') || word.Contains('L') ||
-                            word.Contains('л') || word.Contains('Л'))
+                       
+                        if (word.Contains('l') || word.Contains('L'))
                         {
-                            str += word + " ";
+                            result.Append(word).Append(" ");
                         }
                     }
                 }
             }
-            return str.Trim();
+
+            
+            return result.ToString().Trim();
         }
     }
 }

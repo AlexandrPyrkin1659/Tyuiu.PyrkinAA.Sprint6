@@ -11,21 +11,21 @@ namespace Tyuiu.PyrkinAA.Sprint6.Task6.V5.Test
         public void ValidCollectTextFromFile()
         {
             DataService ds = new DataService();
-            string path = @"C:\DataSprint6\InPutFileTask6V5.txt";
 
-            string res = ds.CollectTextFromFile(path);
-            string wait = "Hello world Well done Little friend";
+          
+            string testFilePath = @"C:\Temp\testInput.txt";
+            string testContent = @"ulzPXa gLertvwzs sMLuPzlvneiTo hZznJL tfouGdncXlJ
+                                  Второя строка с словами hello world test";
+
+            File.WriteAllText(testFilePath, testContent);
+
+            string res = ds.CollectTextFromFile(testFilePath);
+            string wait = "ulzPXa sMLuPzlvneiTo tfouGdncXlJ";
 
             Assert.AreEqual(wait, res);
-        }
 
-        [TestMethod]
-        public void CheckFileExists()
-        {
-            string path = @"C:\DataSprint6\InPutFileTask6V5.txt";
-            FileInfo fileInfo = new FileInfo(path);
-            bool fileExists = fileInfo.Exists;
-            Assert.AreEqual(true, fileExists);
+           
+            File.Delete(testFilePath);
         }
     }
 }
